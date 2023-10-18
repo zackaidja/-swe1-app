@@ -13,7 +13,7 @@ deploy:
   provider: elasticbeanstalk
   access_key_id: $ACCESS_KEY
   secret_access_key: $SECRET_KEY
-  region: us-east-1
+  region: us-west-2
   app: mysite
   env: plsworkpls
   bucket_name: elasticbeanstalk-us-west-2-739742755534
