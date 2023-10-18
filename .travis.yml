@@ -1,0 +1,21 @@
+language: python
+python:
+- '3.8'
+install:
+- pip install -r requirements.txt
+script:
+- python -m black . 
+- python -m flake8 --ignore=F401,E501 --max-line-length=88
+- python -m coverage run manage.py test
+
+after_success: coveralls
+deploy:
+  provider: elasticbeanstalk
+  access_key_id: $ACCESS_KEY
+  secret_access_key: $SECRET_KEY
+  region: us-east-1
+  app: mysite
+  env: plsworkpls
+  bucket_name: elasticbeanstalk-us-west-2-739742755534
+  on:
+    all_branches: true

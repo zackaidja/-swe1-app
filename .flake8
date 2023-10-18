@@ -1,0 +1,6 @@
+[flake8]
+per-file-ignores =
+    swe1-app/*: E501
+exclude = .git,__pycache__,.venv, eb-virt, polls/migrations
+max-complexity = 10
+max-line-length= 88
